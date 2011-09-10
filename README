@@ -1,0 +1,18 @@
+AcceptRules for Bukkit!
+
+Author: rigor789
+
+This plugin adds an extra command to your server! When user types /acceptrules then user's name is added to a file under Plugins/AcceptRules/users.dat! The plugin can be configured by a config file which can be found at Plugins/AcceptRules/config.cfg!
+
+Features:
+Teleporting the player after accepting rules. (Optional - can be turned off in the config file)
+Remembers if the user has accepted the rules allready.
+Disallows building until player accepts the rules (Optional - can be turned off in the config file)
+Forces the player to read the rules! Cant accept them before reading them!
+
+Commands:
+/acceptrules - accepts rules.
+/acceptrules settp - sets the teleport point
+
+Permission Nodes:
+acceptrules.settp - /acceptrules settp
