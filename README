@@ -16,3 +16,4 @@ Commands:
 
 Permission Nodes:
 acceptrules.settp - /acceptrules settp
+acceptrules.notifyonaccept - sends message when someone accepts rules!

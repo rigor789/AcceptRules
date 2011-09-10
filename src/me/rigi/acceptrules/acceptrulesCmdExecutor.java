@@ -2,6 +2,7 @@ package me.rigi.acceptrules;
 
 
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -30,6 +31,12 @@ public class acceptrulesCmdExecutor implements CommandExecutor {
 							player.teleport(AcceptRulesMain.TpPosition);
 						}
 						 System.out.println("[AcceptRules]Player: "+player.getName()+" have accepted rules!");
+						 Player[] playersonline = Bukkit.getServer().getOnlinePlayers();
+						 for(Player p:playersonline){
+								 if (p.isOp()||p.hasPermission("acceptrules.notifyonaccept")){
+								 p.sendMessage(ChatColor.GOLD+"[AcceptRules] "+ChatColor.GREEN+"Player: "+player.getName()+" have accepted rules!");
+							 }
+						 }
 					}else{
 						sender.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.MustReadRules);
 					}

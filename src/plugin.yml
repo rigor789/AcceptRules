@@ -1,5 +1,5 @@
 name: AcceptRules
-version: 0.3
+version: 0.5
 main: me.rigi.acceptrules.AcceptRulesMain
 commands:
   acceptrules:
