@@ -1,0 +1,7 @@
+name: AcceptRules
+version: 0.3
+main: me.rigi.acceptrules.AcceptRulesMain
+commands:
+  acceptrules:
+    description: Used to accept rules!
+    usage: /acceptrules
