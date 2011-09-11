@@ -1,7 +1,5 @@
 package me.rigi.acceptrules;
 
-
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -21,8 +19,7 @@ public class acceptrulesCmdExecutor implements CommandExecutor {
 				if(args.length == 0){
 				if (AcceptRulesMain.players.contains(player.getName())){
 					sender.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.AcceptedAllreadyMsg);
-				}else{	
-					
+				}else{						
 					if(AcceptRulesMain.readed.contains(sender)){
 						AcceptRulesPreferences.UserWriter(player.getName());
 						sender.sendMessage(ChatColor.GREEN+AcceptRulesMain.AcceptedMsg);
@@ -30,29 +27,26 @@ public class acceptrulesCmdExecutor implements CommandExecutor {
 						if(AcceptRulesMain.TpAfterAccept == true){
 							player.teleport(AcceptRulesMain.TpPosition);
 						}
-						 System.out.println("[AcceptRules]Player: "+player.getName()+" have accepted rules!");
+						 System.out.println("[AcceptRules] Player: "+player.getName()+" have accepted rules!");
 						 Player[] playersonline = Bukkit.getServer().getOnlinePlayers();
-						 for(Player p:playersonline){
+						 if(AcceptRulesMain.Notify==true){
+							 for(Player p:playersonline){
 								 if (p.isOp()||p.hasPermission("acceptrules.notifyonaccept")){
 								 p.sendMessage(ChatColor.GOLD+"[AcceptRules] "+ChatColor.GREEN+"Player: "+player.getName()+" have accepted rules!");
 							 }
 						 }
-					}else{
-						sender.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.MustReadRules);
 					}
 					
-					
-					
-					
+					}else{
+						sender.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.MustReadRules);
+					}	
 				}
 				}else{
 				if(args[0].equalsIgnoreCase("settp")){
 					
 					if (!(player.hasPermission("acceptrules.settp") || player.isOp())){
 						sender.sendMessage("You dont have permission to do that!");
-						
-					}else{
-					//	Player player = (Player)sender;
+						}else{
 						String World = player.getWorld().getName();
 						Location location = player.getLocation();
 						double x = location.getX();
@@ -62,15 +56,10 @@ public class acceptrulesCmdExecutor implements CommandExecutor {
 						AcceptRulesMain.savePosToConfig(World, x, y, z);
 						sender.sendMessage("Teleport position succesfuly changed!");
 					}
-					
 				}
 			}
-			}
-		}		
-		// TODO Auto-generated method stub
+		}
+	}		
 		return true;
-	}
-	
-	
-
+}
 }

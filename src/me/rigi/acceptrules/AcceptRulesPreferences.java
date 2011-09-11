@@ -8,17 +8,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import org.bukkit.Location;
 
-
-
-
 public class AcceptRulesPreferences {
 	static String mainDirectory = "plugins/AcceptRules";
 	static File Users = new File(mainDirectory + File.separator + "users.dat");
 	public static String AcceptedMsg;
 	public static String AcceptedAllreadyMsg;
 	public static boolean TpAfterAccept;
-	public static Location TpPosition;
-	
+	public static Location TpPosition;	
 	
 	public void createDir() {
 			new File(mainDirectory).mkdir();	
@@ -50,14 +46,10 @@ public class AcceptRulesPreferences {
 			String input=in.readLine();
 			String[] items = input.split(";");
 			 for(String playername : items){
-			//	 Player playersname =  Bukkit.getServer().getPlayer(playername);
 				 AcceptRulesMain.players.add(playername);
 			 }
 		 }catch (Exception e){//Catch exception if any
 			  System.err.println("Error: " + e.getMessage());
 			  }
 	 }
-
-	
-	
 }

@@ -1,6 +1,13 @@
 name: AcceptRules
-version: 0.5
+version: 0.6
 main: me.rigi.acceptrules.AcceptRulesMain
+permissions:
+    acceptrules.settp:
+        description: /acceptrules settp
+        default: op
+    acceptrules.notifyonaccept:
+        description: sends message when someone accepts rules!
+        default: false
 commands:
   acceptrules:
     description: Used to accept rules!

@@ -1,6 +1,5 @@
 package me.rigi.acceptrules;
 
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -17,22 +16,20 @@ import org.bukkit.util.config.Configuration;
 public class AcceptRulesMain extends JavaPlugin {
 	Logger Log = Logger.getLogger("Minecraft");
 	public static ArrayList<String> players = new ArrayList<String>();
+	public static ArrayList<Player> readed = new ArrayList<Player>();
 	public static Configuration config;
 	public static String AcceptedMsg;
 	public static String AcceptedAllreadyMsg;
 	public static String MustReadRules;
 	public static String CantBuildMsg;
+	public static String TpWorld;
 	public static boolean TpAfterAccept;
 	public static boolean AllowBuild;
-	public static Location TpPosition;
-	public static String TpWorld;
-	public static ArrayList<Player> readed = new ArrayList<Player>();
+	public static boolean Notify;
+	public static Location TpPosition;	
 	private AcceptRulesPlayerListener pListener = new AcceptRulesPlayerListener(this);
 	private AcceptRulesBlockListener bListener = new AcceptRulesBlockListener(this);
-	
-
-	
-	
+		
 	//@Override
 	public void onDisable() {
 		Log.info("[AcceptRules] AcceptRules plugin succesfully disabled!");
@@ -50,6 +47,7 @@ public class AcceptRulesMain extends JavaPlugin {
 		MustReadRules = config.getString("MustReadRules", "You must read the rules in order to accept them!");
 		TpAfterAccept = config.getBoolean("TpAfterAccept", false);
 		AllowBuild = config.getBoolean("AllowBuildBeforeAccept", false);
+		Notify = config.getBoolean("NotifyOPs", true);
 		TpWorld = config.getString("TpWorld", "world");		
 		Double PosX = config.getDouble("TpPositionX", 0);
 		Double PosY = config.getDouble("TpPositionY", 0);
@@ -85,7 +83,5 @@ public class AcceptRulesMain extends JavaPlugin {
 		World worldd =  Bukkit.getServer().getWorld(TpWorld);
 		Location location = new Location(worldd, PosX, PosY, PosZ);
 		TpPosition = location;			
-	    
-	}
-	
+	    }
 }
