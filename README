@@ -1,6 +1,8 @@
 AcceptRules for Bukkit!
 
+Version: v0.8
 Author: rigor789
+CraftBukkit version: 1796
 
 This plugin adds an extra command to your server! When user types /acceptrules then user's name is added to a file under Plugins/AcceptRules/users.dat! The plugin can be configured by a config file which can be found at Plugins/AcceptRules/config.cfg!
 
