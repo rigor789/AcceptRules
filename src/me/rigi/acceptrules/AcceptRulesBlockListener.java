@@ -5,7 +5,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-
+/*****
+ * Unused class! AcceptRulesListener contains block listener too!
+ * @author rigor789
+ *
+ */
 public class AcceptRulesBlockListener implements Listener {
 	@SuppressWarnings("unused")
 	private AcceptRulesMain plugin;

@@ -8,7 +8,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 //import org.bukkit.event.player.PlayerListener;
-
+/****
+ * Unused class! AcceptRulesListener contains player listener too!
+ * @author rigor789
+ *
+ */
 public class AcceptRulesPlayerListener  implements Listener{
 
 	private AcceptRulesMain plugin;
