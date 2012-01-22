@@ -44,10 +44,12 @@ public class AcceptRulesPreferences {
 		 FileReader fstream = new FileReader(Users);			
 			BufferedReader in = new BufferedReader(fstream);
 			String input=in.readLine();
+			if(input != null){
 			String[] items = input.split(";");
 			 for(String playername : items){
 				 AcceptRulesMain.players.add(playername);
 			 }
+			}
 		 }catch (Exception e){//Catch exception if any
 			  System.err.println("Error: " + e.getMessage());
 			  }

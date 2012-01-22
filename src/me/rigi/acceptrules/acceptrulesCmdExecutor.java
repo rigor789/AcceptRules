@@ -10,11 +10,18 @@ import org.bukkit.entity.Player;
 
 public class acceptrulesCmdExecutor implements CommandExecutor {
 
+private AcceptRulesMain plugin;
+	
+	public acceptrulesCmdExecutor(AcceptRulesMain plugin) {
+		// TODO Auto-generated constructor stub
+		this.plugin = plugin;
+	}
+	
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String CommandLabel,
+	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel,
 			String[] args) {
 		Player player = (Player)sender;
-		if (CommandLabel.equalsIgnoreCase("acceptrules")) {
+		if (commandLabel.equalsIgnoreCase("acceptrules")) {
 			if (sender instanceof Player){
 				if(args.length == 0){
 				if (AcceptRulesMain.players.contains(player.getName())){
@@ -53,8 +60,22 @@ public class acceptrulesCmdExecutor implements CommandExecutor {
 						double y = location.getY();
 						double z = location.getZ();
 						
-						AcceptRulesMain.savePosToConfig(World, x, y, z);
+						plugin.savePosToConfig("tp",World, x, y, z);
 						sender.sendMessage("Teleport position succesfuly changed!");
+					}
+				}else if(args[0].equalsIgnoreCase("setspawn")){
+					
+					if (!(player.hasPermission("acceptrules.settp") || player.isOp())){
+						sender.sendMessage("You dont have permission to do that!");
+						}else{
+						String World = player.getWorld().getName();
+						Location location = player.getLocation();
+						double x = location.getX();
+						double y = location.getY();
+						double z = location.getZ();
+						
+						plugin.savePosToConfig("spawn",World, x, y, z);
+						sender.sendMessage("Spawn position succesfuly changed!");
 					}
 				}
 			}
@@ -62,4 +83,5 @@ public class acceptrulesCmdExecutor implements CommandExecutor {
 	}		
 		return true;
 }
+
 }

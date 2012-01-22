@@ -1,0 +1,20 @@
+AcceptedMsg: You have succesfully accepted the rules! Have fun!
+MustReadRules: You must read the rules in order to accept them!
+AcceptedAllreadyMsg: You have allready accepted the rules!
+CantBuildMsg: You must accept rules to build!
+InformMsg: You have to accept the rules! Use /rules and then /acceptrules!
+RulesCmd: /rules
+TpAfterAccept: true
+InformUser: true
+NotifyOPs: true
+TpOnJoin: false
+AllowBuildBeforeAccept: false
+AllowMoveBeforeAccept: true
+TpWorld: world
+TpPositionX: 0
+TpPositionY: 0
+TpPositionZ: 0
+SpawnWorld: world
+SpawnPositionX: 0
+SpawnPositionY: 0
+SpawnPositionZ: 0
