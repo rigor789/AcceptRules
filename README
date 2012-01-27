@@ -1,6 +1,6 @@
 AcceptRules for Bukkit!
 
-Version: v0.9
+Version: v1.0
 Author: rigor789
 CraftBukkit version: 1818
 
@@ -10,6 +10,7 @@ Features:
 Teleporting the player after accepting rules. (Optional - can be turned off in the config file)
 Remembers if the user has accepted the rules allready.
 Disallows building until player accepts the rules (Optional - can be turned off in the config file)
+Disallows using commands until player accepts the rules (Optional - can be turned off in the config file)
 Forces the player to read the rules! Cant accept them before reading them!
 
 Commands:
