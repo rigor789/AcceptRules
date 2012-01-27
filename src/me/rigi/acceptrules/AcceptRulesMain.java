@@ -13,9 +13,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class AcceptRulesMain extends JavaPlugin {
 	Logger Log = Logger.getLogger("Minecraft");
 	public static ArrayList<String> players = new ArrayList<String>();
+	public static ArrayList<String> rules = new ArrayList<String>();
 	public static ArrayList<Player> readed = new ArrayList<Player>();
 	public static String AcceptedMsg,AcceptedAllreadyMsg,InformMsg,MustReadRules,CantBuildMsg,TpWorld,SpawnWorld,RulesCmd;
-	public static boolean TpAfterAccept,AllowBuild,Notify,Inform,AllowMove,TpOnJoin;
+	public static boolean TpAfterAccept,AllowBuild,Notify,Inform,AllowMove,TpOnJoin, BlockCmds, RulesMngr;
 	public static Location TpPosition;
 	public static Location SpawnPosition;
 	public static FileConfiguration config;
@@ -44,6 +45,8 @@ public class AcceptRulesMain extends JavaPlugin {
 		AllowMove = config.getBoolean("AllowMoveBeforeAccept", true);
 		Notify = config.getBoolean("NotifyOPs", true);
 		Inform = config.getBoolean("InformUser", true);
+		BlockCmds = config.getBoolean("BlockCommandsBeforeAccept", true);
+		RulesMngr = config.getBoolean("BuiltInRulesManager", true);
 		TpWorld = config.getString("TpWorld", "world");		
 		SpawnWorld = config.getString("SpawnWorld", "world");
 		
@@ -63,10 +66,12 @@ public class AcceptRulesMain extends JavaPlugin {
 		
 		saveConfig();
 		AcceptRulesPreferences.UserReader();
+		AcceptRulesPreferences.RulesReader();
 
 		pm.registerEvents(new AcceptRulesListener(), this);
 		
 		getCommand("acceptrules").setExecutor(new acceptrulesCmdExecutor(this));
+		getCommand("rules").setExecutor(new acceptrulesCmdExecutor(this));
 		Log.info("[AcceptRules] AcceptRules plugin succesfully enabled!");
 	}
 	

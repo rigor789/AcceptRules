@@ -80,7 +80,12 @@ private AcceptRulesMain plugin;
 				}
 			}
 		}
-	}		
+	}else if(commandLabel.equalsIgnoreCase("rules") && AcceptRulesMain.RulesMngr){
+		 for(String r:AcceptRulesMain.rules){
+			 sender.sendMessage(ChatColor.GREEN+r);
+		 }
+	 }
+		
 		return true;
 }
 

@@ -22,17 +22,23 @@ public class AcceptRulesListener implements Listener {
 	*/
 	@EventHandler
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event){
-		
-		 String[] args = event.getMessage().split(" ");
-		if(args[0].equalsIgnoreCase(AcceptRulesMain.RulesCmd)){
 			Player player = event.getPlayer();
+			String[] args = event.getMessage().split(" ");
+		if(args[0].equalsIgnoreCase(AcceptRulesMain.RulesCmd)){
+			
 			if(!(AcceptRulesMain.readed.contains(player))){
 				AcceptRulesMain.readed.add(player);	
 			}
 			
 			
+		}else{
+			if(AcceptRulesMain.BlockCmds && !(args[0].equalsIgnoreCase("/acceptrules"))){
+				player.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.InformMsg);
+				event.setCancelled(true);
+			}			
 		}
-	}
+		
+		}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
 		if(!AcceptRulesMain.players.contains(event.getPlayer().getName())){

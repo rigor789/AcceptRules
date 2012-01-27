@@ -10,6 +10,7 @@ NotifyOPs: true
 TpOnJoin: false
 AllowBuildBeforeAccept: false
 AllowMoveBeforeAccept: true
+BlockCommandsBeforeAccept: true
 TpWorld: world
 TpPositionX: 0
 TpPositionY: 0

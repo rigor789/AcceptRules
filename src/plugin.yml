@@ -12,3 +12,6 @@ commands:
   acceptrules:
     description: Used to accept rules!
     usage: /acceptrules
+  rules:
+    description: Used to read rules!
+    usage: /rules

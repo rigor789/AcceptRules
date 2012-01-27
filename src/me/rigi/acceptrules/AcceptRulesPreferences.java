@@ -11,6 +11,7 @@ import org.bukkit.Location;
 public class AcceptRulesPreferences {
 	static String mainDirectory = "plugins/AcceptRules";
 	static File Users = new File(mainDirectory + File.separator + "users.dat");
+	static File Rules = new File(mainDirectory + File.separator + "rules.txt");
 	public static String AcceptedMsg;
 	public static String AcceptedAllreadyMsg;
 	public static boolean TpAfterAccept;
@@ -25,6 +26,13 @@ public class AcceptRulesPreferences {
 					ex.printStackTrace();
 				}
 				}
+				if (!Rules.exists()) {				
+					try {
+						Rules.createNewFile();					
+						} catch (IOException ex) {
+						ex.printStackTrace();
+					}
+					}
 			}
 
 	 static void UserWriter(String username) {
@@ -50,6 +58,26 @@ public class AcceptRulesPreferences {
 				 AcceptRulesMain.players.add(playername);
 			 }
 			}
+		 }catch (Exception e){//Catch exception if any
+			  System.err.println("Error: " + e.getMessage());
+			  }
+	 }
+	 
+	 static void RulesReader() {		 
+		 try{
+		 FileReader fstream = new FileReader(Rules);			
+			BufferedReader in = new BufferedReader(fstream);
+			//String input=in.readLine();
+			//if(input != null){
+			//String[] items = input.split(";");
+			String rule = null;
+			 while ((rule = in.readLine()) != null) {
+				 AcceptRulesMain.rules.add(rule);
+		        }
+			/* for(String rule : items){
+				 AcceptRulesMain.rules.add(rule);
+			 }
+			}*/
 		 }catch (Exception e){//Catch exception if any
 			  System.err.println("Error: " + e.getMessage());
 			  }
