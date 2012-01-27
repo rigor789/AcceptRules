@@ -25,7 +25,7 @@ public class AcceptRulesListener implements Listener {
 			
 			
 		}else{
-			if(AcceptRulesMain.BlockCmds && !(args[0].equalsIgnoreCase("/acceptrules"))){
+			if(AcceptRulesMain.BlockCmds && !args[0].equalsIgnoreCase("/acceptrules") && !AcceptRulesMain.players.contains(event.getPlayer().getName())){
 				player.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.InformMsg);
 				event.setCancelled(true);
 			}			
