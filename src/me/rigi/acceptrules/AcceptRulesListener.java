@@ -12,14 +12,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 public class AcceptRulesListener implements Listener {
-	
-	/*private AcceptRulesMain plugin;
-	
-	public AcceptRulesListener(AcceptRulesMain plugin) {
-		// TODO Auto-generated constructor stub
-		this.plugin = plugin;
-	}
-	*/
+
 	@EventHandler
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event){
 			Player player = event.getPlayer();

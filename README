@@ -1,8 +1,8 @@
 AcceptRules for Bukkit!
 
-Version: v0.8
+Version: v0.9
 Author: rigor789
-CraftBukkit version: 1796
+CraftBukkit version: 1818
 
 This plugin adds an extra command to your server! When user types /acceptrules then user's name is added to a file under Plugins/AcceptRules/users.dat! The plugin can be configured by a config file which can be found at Plugins/AcceptRules/config.cfg!
 
@@ -15,6 +15,7 @@ Forces the player to read the rules! Cant accept them before reading them!
 Commands:
 /acceptrules - accepts rules.
 /acceptrules settp - sets the teleport point
+/rules - read the rules
 
 Permission Nodes:
 acceptrules.settp - /acceptrules settp
