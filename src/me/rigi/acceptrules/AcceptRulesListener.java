@@ -16,8 +16,11 @@ public class AcceptRulesListener implements Listener {
 	@EventHandler
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event){
 			Player player = event.getPlayer();
+			String cmd = event.getMessage();
 			String[] args = event.getMessage().split(" ");
-		if(args[0].equalsIgnoreCase(AcceptRulesMain.RulesCmd)){
+			String[] command = AcceptRulesMain.RulesCmd.split(" ");
+			
+		if(cmd.equalsIgnoreCase(AcceptRulesMain.RulesCmd)){
 			
 			if(!(AcceptRulesMain.readed.contains(player))){
 				AcceptRulesMain.readed.add(player);	
@@ -25,7 +28,7 @@ public class AcceptRulesListener implements Listener {
 			
 			
 		}else{
-			if(AcceptRulesMain.BlockCmds && !args[0].equalsIgnoreCase("/acceptrules") && !AcceptRulesMain.players.contains(event.getPlayer().getName())){
+			if(!args[0].equalsIgnoreCase(command[0]) && AcceptRulesMain.BlockCmds && !args[0].equalsIgnoreCase("/acceptrules") && !AcceptRulesMain.players.contains(event.getPlayer().getName())){
 				player.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.InformMsg);
 				event.setCancelled(true);
 			}			
