@@ -77,6 +77,16 @@ private AcceptRulesMain plugin;
 						plugin.savePosToConfig("spawn",World, x, y, z);
 						sender.sendMessage("Spawn position succesfuly changed!");
 					}
+				}else if(args[0].equalsIgnoreCase("reload")){
+					
+					if (!(player.hasPermission("acceptrules.settp") || player.isOp())){
+						sender.sendMessage("You dont have permission to do that!");
+						}else{
+						AcceptRulesPreferences.UserReader();
+						AcceptRulesPreferences.RulesReader();
+						plugin.reloadConfig();
+						sender.sendMessage(ChatColor.GOLD+"[AcceptRules] "+ChatColor.GREEN+"AcceptRules reloaded files!");
+					}
 				}
 			}
 		}

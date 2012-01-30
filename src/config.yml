@@ -4,6 +4,7 @@ AcceptedAllreadyMsg: You have allready accepted the rules!
 CantBuildMsg: You must accept rules to build!
 InformMsg: You have to accept the rules! Use /rules and then /acceptrules!
 RulesCmd: /rules
+BuiltInRulesManager: true
 TpAfterAccept: true
 InformUser: true
 NotifyOPs: true
