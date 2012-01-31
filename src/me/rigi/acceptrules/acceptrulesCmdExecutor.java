@@ -59,8 +59,10 @@ private AcceptRulesMain plugin;
 						double x = location.getX();
 						double y = location.getY();
 						double z = location.getZ();
+						double pitch = location.getPitch();
+						double yaw = location.getYaw();
 						
-						plugin.savePosToConfig("tp",World, x, y, z);
+						plugin.savePosToConfig("tp",World, x, y, z, pitch, yaw);
 						sender.sendMessage("Teleport position succesfuly changed!");
 					}
 				}else if(args[0].equalsIgnoreCase("setspawn")){
@@ -73,8 +75,10 @@ private AcceptRulesMain plugin;
 						double x = location.getX();
 						double y = location.getY();
 						double z = location.getZ();
+						double pitch = location.getPitch();
+						double yaw = location.getYaw();
 						
-						plugin.savePosToConfig("spawn",World, x, y, z);
+						plugin.savePosToConfig("spawn",World, x, y, z, pitch, yaw);
 						sender.sendMessage("Spawn position succesfuly changed!");
 					}
 				}else if(args[0].equalsIgnoreCase("reload")){
@@ -82,6 +86,8 @@ private AcceptRulesMain plugin;
 					if (!(player.hasPermission("acceptrules.settp") || player.isOp())){
 						sender.sendMessage("You dont have permission to do that!");
 						}else{
+						AcceptRulesMain.players.clear();
+						AcceptRulesMain.rules.clear();
 						AcceptRulesPreferences.UserReader();
 						AcceptRulesPreferences.RulesReader();
 						plugin.reloadConfig();

@@ -16,7 +16,11 @@ TpWorld: world
 TpPositionX: 0
 TpPositionY: 0
 TpPositionZ: 0
+TpPositionPitch: 0
+TpPositionYaw: 0
 SpawnWorld: world
 SpawnPositionX: 0
 SpawnPositionY: 0
 SpawnPositionZ: 0
+SpawnPositionPitch: 0
+SpawnPositionYaw: 0

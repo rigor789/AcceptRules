@@ -1,5 +1,5 @@
 name: AcceptRules
-version: 1.3
+version: 1.4
 main: me.rigi.acceptrules.AcceptRulesMain
 permissions:
     acceptrules.settp:
