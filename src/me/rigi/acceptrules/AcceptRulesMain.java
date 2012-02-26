@@ -10,10 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
 public class AcceptRulesMain extends JavaPlugin {
 	Logger Log = Logger.getLogger("Minecraft");
-	
 	public static AcceptRulesMain plugin;	
 	public static ArrayList<String> players = new ArrayList<String>();
 	public static ArrayList<String> rules = new ArrayList<String>();
@@ -32,6 +30,7 @@ public class AcceptRulesMain extends JavaPlugin {
 		PluginManager pm = getServer().getPluginManager();
 		AcceptRulesPreferences acceptrulespreferences = new AcceptRulesPreferences();
 		acceptrulespreferences.createDir();		
+		
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		config = getConfig();
@@ -74,8 +73,7 @@ public class AcceptRulesMain extends JavaPlugin {
 		AcceptRulesPreferences.UserReader();
 		AcceptRulesPreferences.RulesReader();
 
-		pm.registerEvents(new AcceptRulesListener(), this);
-		
+		pm.registerEvents(new AcceptRulesListener(), this);	
 		getCommand("acceptrules").setExecutor(new acceptrulesCmdExecutor(this));
 		getCommand("rules").setExecutor(new acceptrulesCmdExecutor(this));
 		Log.info("[AcceptRules] AcceptRules plugin succesfully enabled!");
@@ -89,7 +87,6 @@ public class AcceptRulesMain extends JavaPlugin {
 		    config.set("TpPositionZ", z);	    
 		    config.set("TpPositionPitch", pitch);	    
 		    config.set("TpPositionYaw", yaw);	    
-
 		    saveConfig();
 		}else if(type.equalsIgnoreCase("spawn")){
 			config.set("SpawnWorld", world);
@@ -123,6 +120,11 @@ public class AcceptRulesMain extends JavaPlugin {
 			Location location = new Location(worldd, PosX, PosY, PosZ, Yaw, Pitch);
 			SpawnPosition = location;
 		}
+	}
+	
+	public void ColorTexts(){
+		
+	
 	}
 }
 

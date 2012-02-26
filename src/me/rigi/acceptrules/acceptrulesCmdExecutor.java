@@ -25,11 +25,11 @@ private AcceptRulesMain plugin;
 			if (sender instanceof Player){
 				if(args.length == 0){
 				if (AcceptRulesMain.players.contains(player.getName())){
-					sender.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.AcceptedAllreadyMsg);
+					sender.sendMessage(AcceptRulesMain.AcceptedAllreadyMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 				}else{						
 					if(AcceptRulesMain.readed.contains(sender)){
 						AcceptRulesPreferences.UserWriter(player.getName());
-						sender.sendMessage(ChatColor.GREEN+AcceptRulesMain.AcceptedMsg);
+						sender.sendMessage(AcceptRulesMain.AcceptedMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 						AcceptRulesPreferences.UserReader();
 						if(AcceptRulesMain.TpAfterAccept == true){
 							player.teleport(AcceptRulesMain.TpPosition);
@@ -45,7 +45,7 @@ private AcceptRulesMain plugin;
 					}
 					
 					}else{
-						sender.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.MustReadRules);
+						sender.sendMessage(AcceptRulesMain.MustReadRules.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 					}	
 				}
 				}else{

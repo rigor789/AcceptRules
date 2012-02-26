@@ -1,9 +1,9 @@
-AcceptedMsg: You have succesfully accepted the rules! Have fun!
-MustReadRules: You must read the rules in order to accept them!
-AcceptedAllreadyMsg: You have allready accepted the rules!
-CantBuildMsg: You must accept rules to build!
-InformMsg: You have to accept the rules! Use /rules and then /acceptrules!
-RulesCmd: /rules
+AcceptedMsg: '&2You have succesfully accepted the &6rules&2! Have fun!'
+MustReadRules: '&4You must read the &6rules &4in order to accept them!'
+AcceptedAllreadyMsg: '&4You have allready accepted the &6rules&4!'
+CantBuildMsg: '&4You must accept &6rules &4to build!'
+InformMsg: '&2You have to accept the &6rules&2! Use &3/rules &2and then &3/acceptrules&2!'
+RulesCmd: '/rules'
 BuiltInRulesManager: true
 TpAfterAccept: true
 InformUser: true

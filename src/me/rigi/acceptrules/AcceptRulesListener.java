@@ -29,7 +29,7 @@ public class AcceptRulesListener implements Listener {
 			
 		}else{
 			if(!args[0].equalsIgnoreCase(command[0]) && AcceptRulesMain.BlockCmds && !args[0].equalsIgnoreCase("/acceptrules") && !AcceptRulesMain.players.contains(event.getPlayer().getName())){
-				player.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.InformMsg);
+				player.sendMessage(AcceptRulesMain.InformMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 				event.setCancelled(true);
 			}			
 		}
@@ -47,7 +47,7 @@ public class AcceptRulesListener implements Listener {
 				
 				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(new AcceptRulesMain(), new Runnable() {
 				    public void run() {
-				    	player.sendMessage(AcceptRulesMain.InformMsg);
+				    	player.sendMessage(AcceptRulesMain.InformMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 				    }
 				}, 10L);
 				
@@ -62,7 +62,7 @@ public class AcceptRulesListener implements Listener {
 			if (AcceptRulesMain.players.contains(player.getName())){
 			}else{
 				event.setCancelled(true);
-			player.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.CantBuildMsg);
+				player.sendMessage(AcceptRulesMain.CantBuildMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 			}
 		}
 	}
@@ -73,7 +73,7 @@ public class AcceptRulesListener implements Listener {
 			if (AcceptRulesMain.players.contains(player.getName())){
 			}else{
 				event.setCancelled(true);
-				player.sendMessage(ChatColor.DARK_RED+AcceptRulesMain.CantBuildMsg);
+				player.sendMessage(AcceptRulesMain.CantBuildMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 			}
 		}
 	}
