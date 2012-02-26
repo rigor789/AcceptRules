@@ -2,6 +2,7 @@ package me.rigi.acceptrules;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,7 +40,10 @@ public class AcceptRulesListener implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent event){
 		if(!AcceptRulesMain.players.contains(event.getPlayer().getName())){
 			if(AcceptRulesMain.TpOnJoin==true){
-			event.getPlayer().teleport(AcceptRulesMain.SpawnPosition);
+				Location loc = new Location(Bukkit.getWorld("world"), 0, 0, 0, 0, 0);
+				if(!AcceptRulesMain.SpawnPosition.equals(loc)){
+					event.getPlayer().teleport(AcceptRulesMain.SpawnPosition);
+				}
 			}
 			
 			if(AcceptRulesMain.Inform==true){

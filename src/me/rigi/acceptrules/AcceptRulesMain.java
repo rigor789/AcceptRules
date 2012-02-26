@@ -87,16 +87,16 @@ public class AcceptRulesMain extends JavaPlugin {
 		    config.set("TpPositionZ", z);	    
 		    config.set("TpPositionPitch", pitch);	    
 		    config.set("TpPositionYaw", yaw);	    
-		    saveConfig();
-		}else if(type.equalsIgnoreCase("spawn")){
+		}
+		if(type.equalsIgnoreCase("spawn")){
 			config.set("SpawnWorld", world);
 			config.set("SpawnPositionX", x);
 			config.set("SpawnPositionY", y);
 			config.set("SpawnPositionZ", z);
 			config.set("SpawnPositionPitch", pitch);	
 			config.set("SpawnPositionYaw", yaw);	
-			saveConfig();
 		}
+		saveConfig();
 		reloadConfig();
 		if(type.equalsIgnoreCase("tp")){
 			TpWorld = config.getString("TpWorld", "world");		
@@ -108,7 +108,8 @@ public class AcceptRulesMain extends JavaPlugin {
 			World worldd =  Bukkit.getServer().getWorld(TpWorld);
 			Location location = new Location(worldd, PosX, PosY, PosZ, Yaw, Pitch);
 			TpPosition = location;	
-		}else if(type.equalsIgnoreCase("spawn")){
+		}
+		if(type.equalsIgnoreCase("spawn")){
 		    TpWorld = config.getString("SpawnWorld", "world");		
 			Double PosX = config.getDouble("SpawnPositionX", 0);
 			Double PosY = config.getDouble("SpawnPositionY", 0);
@@ -120,11 +121,7 @@ public class AcceptRulesMain extends JavaPlugin {
 			Location location = new Location(worldd, PosX, PosY, PosZ, Yaw, Pitch);
 			SpawnPosition = location;
 		}
-	}
-	
-	public void ColorTexts(){
-		
-	
+
 	}
 }
 

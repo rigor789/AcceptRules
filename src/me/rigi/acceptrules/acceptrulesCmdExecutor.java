@@ -32,7 +32,10 @@ private AcceptRulesMain plugin;
 						sender.sendMessage(AcceptRulesMain.AcceptedMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 						AcceptRulesPreferences.UserReader();
 						if(AcceptRulesMain.TpAfterAccept == true){
+							Location loc = new Location(Bukkit.getWorld("world"), 0, 0, 0, 0, 0);
+							if(!AcceptRulesMain.TpPosition.equals(loc)){
 							player.teleport(AcceptRulesMain.TpPosition);
+							}
 						}
 						 System.out.println("[AcceptRules] Player: "+player.getName()+" have accepted rules!");
 						 Player[] playersonline = Bukkit.getServer().getOnlinePlayers();
