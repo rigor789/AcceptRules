@@ -85,6 +85,7 @@ public class AcceptRulesListener implements Listener {
 	public void onPlayerMove(PlayerMoveEvent event){
 		if((!AcceptRulesMain.players.contains(event.getPlayer().getName()))&& (AcceptRulesMain.AllowMove == false)){
 			event.setCancelled(true);
+			player.sendMessage(AcceptRulesMain.CantBuildMsg.replaceAll("&([a-f0-9])", ChatColor.COLOR_CHAR + "$1"));
 		}
 	}
 }
