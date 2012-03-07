@@ -26,7 +26,11 @@ public class AcceptRulesListener implements Listener {
 			if(!(AcceptRulesMain.readed.contains(player))){
 				AcceptRulesMain.readed.add(player);	
 			}
-			
+			if(AcceptRulesMain.RulesMngr){
+				 for(String r:AcceptRulesMain.rules){
+					 player.sendMessage(ChatColor.GREEN+r);
+				 }
+			 }
 			
 		}else{
 			if(!args[0].equalsIgnoreCase(command[0]) && AcceptRulesMain.BlockCmds && !args[0].equalsIgnoreCase("/acceptrules") && !AcceptRulesMain.players.contains(event.getPlayer().getName())){

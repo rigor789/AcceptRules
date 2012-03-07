@@ -42,7 +42,7 @@ private AcceptRulesMain plugin;
 						 if(AcceptRulesMain.Notify==true){
 							 for(Player p:playersonline){
 								 if (p.isOp()||p.hasPermission("acceptrules.notifyonaccept")){
-								 p.sendMessage(ChatColor.GOLD+"[AcceptRules] "+ChatColor.GREEN+"Player: "+player.getName()+" have accepted rules!");
+								 p.sendMessage(ChatColor.GOLD+"[AcceptRules] "+ChatColor.GREEN+"Player: "+player.getName()+" has accepted rules!");
 							 }
 						 }
 					}
@@ -99,11 +99,7 @@ private AcceptRulesMain plugin;
 				}
 			}
 		}
-	}else if(commandLabel.equalsIgnoreCase("rules") && AcceptRulesMain.RulesMngr){
-		 for(String r:AcceptRulesMain.rules){
-			 sender.sendMessage(ChatColor.GREEN+r);
-		 }
-	 }
+	}
 		
 		return true;
 }
