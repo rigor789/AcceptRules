@@ -22,11 +22,11 @@ public class AcceptRulesListener implements Listener {
 			String[] command = AcceptRulesMain.RulesCmd.split(" ");
 			
 		if(cmd.equalsIgnoreCase(AcceptRulesMain.RulesCmd)){
-			
 			if(!(AcceptRulesMain.readed.contains(player))){
 				AcceptRulesMain.readed.add(player);	
 			}
 			if(AcceptRulesMain.RulesMngr){
+				event.setCancelled(true);
 				 for(String r:AcceptRulesMain.rules){
 					 player.sendMessage(ChatColor.GREEN+r);
 				 }
