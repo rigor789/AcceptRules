@@ -75,7 +75,6 @@ public class AcceptRulesMain extends JavaPlugin {
 
 		pm.registerEvents(new AcceptRulesListener(), this);	
 		getCommand("acceptrules").setExecutor(new acceptrulesCmdExecutor(this));
-		getCommand("rules").setExecutor(new acceptrulesCmdExecutor(this));
 		Log.info("[AcceptRules] AcceptRules plugin succesfully enabled!");
 	}
 	
