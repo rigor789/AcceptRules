@@ -49,7 +49,6 @@ public class AcceptRulesListener implements Listener {
 					event.getPlayer().teleport(AcceptRulesMain.SpawnPosition);
 				}
 			}
-			
 			if(AcceptRulesMain.Inform==true){
 				final Player player = event.getPlayer();
 				
